@@ -22,7 +22,7 @@ export function addImagesToGallery(images) {
   const markup = images
     .map(imgDetails => createGalleryCardTemplate(imgDetails))
     .join('');
-  galleryEl.innerHTML = markup;
+  galleryEl.insertAdjacentHTML('beforeend', markup);
 
   lightbox = new SimpleLightbox('.gallery a', {
     captions: true,
